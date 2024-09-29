@@ -1,12 +1,180 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Clone Disney+</title>
     <link rel="stylesheet" href="dist/css/main.css">
+    <script src="./dist/js/main.js" defer></script>
 </head>
 <body>
-    
+    <header class="header">
+        <div class="header__container">
+            <h1>
+                <img class="header__logo" src="./dist/images/logodisneyplus.png" alt="disney+">
+            </h1>
+            <ul class="header__links">
+                <li class="header__links__item">
+                    <a class="button button--secondary" href="#">Assistir</a>
+                </li>
+                <li class="header__links__item">
+                    <a class="button button--dark" href="#">Trailer</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section class="hero">
+        
+        <div class="hero__content">
+            <div class="hero__content__branding">
+                <img src="./dist/images/toylogo.webp" alt="Toy Store 4">
+            </div>
+            <div class="hero__content__classifition">
+                <img src="./dist/images/imglivre.webp" alt="L">
+                <img src="./dist/images/imghd.webp" alt="HD">
+                <img src="./dist/images/imgcc.webp" alt="CC">
+                <img src="./dist/images/imgad.webp" alt="Audiodrescrição">
+            </div>
+            <div class="text--small">
+                2019 • lh 41min • Conédia, Animação
+            </div>
+
+            <div class="title--small">
+                Woody decide mostrar ao Garfinho por que ele deveria abraçar a ideia de ser um brinquedo.
+            </div>
+            
+            <ul class="hero__content__play">
+                <li class="hero__content__play__start">
+                    
+                    <button class="button button--Assistir" type="button"><svg fill="#000000" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.114 460.114" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M393.538,203.629L102.557,5.543c-9.793-6.666-22.468-7.372-32.94-1.832c-10.472,5.538-17.022,16.413-17.022,28.26v396.173 c0,11.846,6.55,22.721,17.022,28.26c10.471,5.539,23.147,4.834,32.94-1.832l290.981-198.087 c8.746-5.954,13.98-15.848,13.98-26.428C407.519,219.477,402.285,209.582,393.538,203.629z"></path> </g> </g> </g></svg>Assistir</button>
+
+                    
+                </li>
+                <li class="hero__content__play__start">
+                    
+                    <button class="button button--Trailer" type="button">Trailer</button>
+                </li>
+
+                <li class="hero__content__play__start">
+                    
+                    <button class="button button--Mais" type="button">+</button>
+                </li>
+            </ul>
+        </div>
+<div class="hero__shows">
+    <nav class="hero__shows__tabs">
+    <button data-tab-button="em_breve" class="hero__shows__tabs__button hero__shows__tabs__button--is-active">Sugestões</button>
+    <button data-tab-button="mais_populares" class="hero__shows__tabs__button">Extras</button>
+    <button data-tab-button="mais_starplus" class="hero__shows__tabs__button">Detelhes</button>
+</nav>
+<ul data-tab-id="em_breve" class="hero__shows__list hero__shows__list--is-active">
+    <li class="hero__shows__list__item">
+        <img src="./dist/images//filmes-relacionados/img5.webp" alt="Desencantada">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/filmes-relacionados/img1.webp" alt="Willow">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/filmes-relacionados/img2.webp" alt="Lobisomem na noite">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/filmes-relacionados/img3.webp" alt="Spidey">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/filmes-relacionados/img4.webp" alt="The Santa Clauses">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/filmes-relacionados/img6.webp" alt="Sem limites">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/filmes-relacionados/img7.webp" alt="Sem limites">
+    </li>
+</ul>
+<ul data-tab-id="mais_populares" class="hero__shows__list">
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/mais_populares/bluey.jpg" alt="Bluey">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/mais_populares/cavaleira_da_lua.jpg" alt="Cavaleira da lua">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/mais_populares/o_incrivel_dr_pol.jpg" alt="O incrivel dr pol">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/mais_populares/red.jpg" alt="Red">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/mais_populares/obi_wan.jpg" alt="Obi wan">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/mais_populares/tudo_igual_sqn.jpg" alt="Tudo igual SQN">
+    </li>
+</ul>
+<ul data-tab-id="mais_starplus" class="hero__shows__list">
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/mais_no_star_plus/belair.jpg" alt="Belair">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/mais_no_star_plus/libertadores.jpg" alt="Libertadores">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/mais_no_star_plus/nba.jpg" alt="NBA">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/mais_no_star_plus/os_simpson.jpg" alt="Os Simpsons">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/mais_no_star_plus/premier_league.jpg" alt="Premier League">
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/mais_no_star_plus/the_kardashians.jpg" alt="The Kardashians">
+    </li>
+</ul>
+</div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <img class="footer__logo" src="./dist/images/logodisneyplus.png" alt="Disney+">
+        <ul class="footer__links">
+            <li class="footer__links__item">
+                <a class="text--small" href="#">Política de privacidade</a>
+            </li>
+            <li class="footer__links__item">
+                <a class="text--small" href="#">Termos de Uso da Disney</a>
+            </li>
+            <li class="footer__links__item">
+                <a class="text--small" href="#">Aviso de Direitos de Privacidade do Brasil</a>
+            </li>
+            <li class="footer__links__item">
+                <a class="text--small" href="#">Política de cookies</a>
+            </li>
+            <li class="footer__links__item">
+                <a class="text--small" href="#">Proteção de Dados no Brasil</a>
+            </li>
+            <li class="footer__links__item">
+                <a class="text--small" href="#">Contrato de Assinatura</a>
+            </li>
+            <li class="footer__links__item">
+                <a class="text--small" href="#">Ajuda</a>
+            </li>
+            <li class="footer__links__item">
+                <a class="text--small" href="#">Dispositivos compatíveis</a>
+            </li>
+            <li class="footer__links__item">
+                <a class="text--small" href="#">Sobre o Disney+</a>
+            </li>
+            <li class="footer__links__item">
+                <a class="text--small" href="#">Anúncios personalizados</a>
+            </li>
+        </ul>
+        <p class="text--small">
+            Disney+ é um serviço pago, baseado em assinatura e sujeito a terrnos e cmdções. O serviço Disrr•y+ é comercializado por The Walt Di*ley Compny (Brasil) Ltda., World Trade Center, Av. Das Nações Unidas, 12.551, 12.555, 12.559, Piso 10, São PatAo/SP - CEP 04578-903, Brasil e CNPJ/M 73.042.962/0004-20
+        </p>
+        <p class="text--small">
+            @ Disney. os direiüh reservados.
+        </p>
+        </div>
+    </footer>
 </body>
 </html>
