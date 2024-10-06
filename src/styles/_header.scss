@@ -1,73 +1,214 @@
 @use 'variaveis';
 
 .header {
-    display: none;
-    position: sticky;
-    top: 0;
-    left: 0;
-    background-color: variaveis.$corDeFundo;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    background-color: transparent;
     transition: background-color .5s ease;
-    z-index: 1;
+    z-index: 5;
 
-    &--is-hidden {
-        background-color: transparent;
+
+    &--is-transparent {
+        background-color: variaveis.$corDeFundo;
         transition: background-color .5s ease;
-
-        .header {
-
-            &__logo, &__links__item:first-child {
-                opacity: 0;
-                visibility: hidden;
-                transition: opacity .5s ease;
-            }
-            
-        }
-
-
     }
 
     &__container {
         padding: 8px 36px;
         display: flex;
-        justify-content: space-between;
+        background-color: transparent;
+        align-items: center;
+        
+    }
 
-        @media (max-width: 768px) {
-            padding: 0 12px 0 20px;
+    &__menu {
+        max-height: 100%;
+        display: flex;
+        margin: 0;
+        
+        &__button {
+            margin: 0;
+            max-height: 100%;
+            font-weight: bold;
+            margin-right: 40px;
+            color: variaveis.$corTextoSecundario;
+            font-size: 14px;
+            border: none;
+            padding-bottom: 5px;
+            background: none;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-bottom: 5px solid transparent;
+
+            i, svg {
+                margin-right: 10px;
+            }
+
+            span {
+                position: relative; 
+    
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -3px; 
+                    left: 0;
+                    width: 0; 
+                    height: 2px;
+                    background-color: variaveis.$corTextoSecundario;
+                    transition: width 0.3s ease-out; 
+                }
+            }
+    
+            &:hover span::after {
+                width: 100%; 
+            }
         }
     }
 
-    &__logo{
+    
+    &__logo {
         max-width: 80px;
         width: 100%;
-        margin: 5px;
-        transition: opacity .5s ease;
-
-        @media (max-width: 768px) {
-            max-width: 64px;
-        }
+        margin-right: 55px;
+        
     }
 
-    &__links {
+    &__perfil {
+        
+        margin-left: auto;
         display: flex;
+        width: 230px;
+        justify-content: end;
+        
+        
+        
+        
+        
+        &__config {
+            
+            
+    
+            li {
+                position: relative;
+                
+    
+                a {
+                    width: 240px;
+                    max-width: 100%;
+                    height: 66px;
+                    padding: 0 36px 0 0;
+                    display: flex;
+                    align-items: center; 
+                    justify-content: flex-end; /* Alinha horizontalmente à esquerda */
+                    text-decoration: none;
+                    color: variaveis.$corTextoSecundario;
+                    background-color: transparent;
 
-        &__item {
-            margin: 5px;
-            transition: opacity .5s ease;
+                    span {
+                        margin-right: 20px;
+                    }
 
+
+                    &:hover {
+                        background-color: #131313; /* Mantém a cor de fundo */
+                    
+                        
+                        
+                    }
+    
+
+
+
+                }
+    
+                ul {
+                    
+                    position: absolute;
+                    top: 100%; /* Faz o dropdown aparecer logo abaixo do "Meu Perfil" */
+                    left: 0;
+                    background-color: #131313;
+                    display: none;
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    
+    
+                    li {
+                        width: 100%;
+                        a {
+                            text-align: left;
+                            align-items: center;
+                            height: 50px;
+                            display: block;
+                            padding: 10px 20px;
+                            color: variaveis.$corTextoSecundario;
+                            text-decoration: none;
+
+                            button {
+                                font-size: 20px;
+                                background-color: #7a7b82;
+                                color: #f9f9f9;
+                                border-radius: 50%;
+                                width: 40px;
+                                height: 40px;
+                            }
+    
+                            &:hover {
+                                background-color: #131313;
+                                
+                                
+
+                            }
+                        }
+                    }
+                }
+
+
+    
+                &:hover ul, &.over ul {
+                    display: block;
+                    border-bottom: 1px solid #fff;
+
+                    
+                    
+                }
+                &:hover > a {
+                    background-color: #131313; 
+                    
+                    
+                }
+
+                &:hover a:first-child {
+                    border-left: 1px solid #fff;
+                    
+                    
+                }
+            }
         }
-    }
-    .button {
-        height: 50px;
-        display: flex;
-        align-items: center;
-
-        @media (max-width: 768px) {
-            font-size: 13px;
-            padding: 8px 11px;
-            height: 40px;
-            letter-spacing: 0;
+        
+        img {
+            width: 48px;
+            height: 48px;
+            border-radius: 100%;
         }
+
     }
 }
 
 
+@media (max-width: 768px) {
+    header {
+
+        &__menu {
+            &__button {
+                span {
+
+                    display: none;
+                    
+                }
+            }
+        }
+    }
+}

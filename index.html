@@ -4,27 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clone Disney+</title>
-    <link rel="stylesheet" href="dist/css/main.css">
-    <script src="./dist/js/main.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">    <link rel="stylesheet" href="dist/css/main.css">
+    <script src="./src/scripts/main.js" defer></script>
 </head>
 <body>
     <header class="header">
         <div class="header__container">
             <h1>
-                <img class="header__logo" src="./dist/images/logodisneyplus.png" alt="disney+">
+                <img class="header__logo" src="./dist/images/logodisneyplus.png" alt="Disney+">
             </h1>
-            <ul class="header__links">
-                <li class="header__links__item">
-                    <a class="button button--secondary" href="#">Assistir</a>
-                </li>
-                <li class="header__links__item">
-                    <a class="button button--dark" href="#">Trailer</a>
+        
+            <nav class="header__menu">
+                
+                <button class="header__menu__button"><i class="bi bi-house-fill"></i><span>Início</span></button>
+                <button class="header__menu__button"><i class="bi bi-search"></i><span>Pesquisa</span></button>
+                <button class="header__menu__button"><i class="bi bi-plus-lg"></i><span>Minha Lista</span></button>
+                <button class="header__menu__button"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="14" height="14" viewBox="0 0 48 48"><polygon fill="#fff" points="20.029,33 20.486,29 40.486,29 41.514,20 9.514,20 7,42 39,42 40.029,33"></polygon><polygon fill="#fff" points="43,7 11,7 9.971,16 41.971,16"></polygon></svg><span>ESPN</span></button>
+                <button class="header__menu__button"><i class="bi bi-film"></i><span>Filmes</span></button>
+                <button class="header__menu__button"><i class="bi bi-tv-fill"></i><span>Séries</span></button>
+                <button class="header__menu__button"><i class="bi bi-star-fill"></i><span>Originais</span></button>
+            </nav>
+        </div>
+        <nav class="header__perfil">
+            <ul class="header__perfil__config">
+                <li><a><span class="text">Meu Perfil</span> <img src="./dist/images/avatar.jpg" alt='imagem perfil'></a>
+                    <ul>
+                        <li><a class="text--small" href="#"><button>+</button>Adiconar Perfil</a></li>
+                        <li><a class="text--small" href="#">Editar Perfil</a></li>
+                        <li><a class="text--small" href="#">Configurações do Aplicativo</a></li>
+                        <li><a class="text--small" href="#">Conta</a></li>
+                        <li><a class="text--small" href="#">Ajuda</a></li>
+                        <li><a class="text--small" href="#">Sair</a></li>
+                    </ul>
                 </li>
             </ul>
-        </div>
+            
+        </nav>
     </header>
+
     <section class="hero">
-        
         <div class="hero__content">
             <div class="hero__content__branding">
                 <img src="./dist/images/toylogo.webp" alt="Toy Store 4">
@@ -63,11 +81,11 @@
         </div>
 <div class="hero__shows">
     <nav class="hero__shows__tabs">
-    <button data-tab-button="em_breve" class="hero__shows__tabs__button hero__shows__tabs__button--is-active">Sugestões</button>
-    <button data-tab-button="mais_populares" class="hero__shows__tabs__button">Extras</button>
-    <button data-tab-button="mais_starplus" class="hero__shows__tabs__button">Detelhes</button>
+    <button data-tab-button="sugestoes" class="hero__shows__tabs__button hero__shows__tabs__button--is-active">Sugestões</button>
+    <button data-tab-button="extras" class="hero__shows__tabs__button">Extras</button>
+    <button data-tab-button="detalhes" class="hero__shows__tabs__button">Detelhes</button>
 </nav>
-<ul data-tab-id="em_breve" class="hero__shows__list hero__shows__list--is-active">
+<ul data-tab-id="sugestoes" class="hero__shows__list hero__shows__list--is-active">
     <li class="hero__shows__list__item">
         <img src="./dist/images//filmes-relacionados/img5.webp" alt="Desencantada">
     </li>
@@ -90,48 +108,91 @@
         <img src="./dist/images/filmes-relacionados/img7.webp" alt="Sem limites">
     </li>
 </ul>
-<ul data-tab-id="mais_populares" class="hero__shows__list">
+<ul data-tab-id="extras" class="hero__shows__list">
     <li class="hero__shows__list__item">
-        <img src="./dist/images/mais_populares/bluey.jpg" alt="Bluey">
+        <img src="./dist/images/extras/img1.webp" alt="Bluey">
+        <h2 class="text--big">Toy Story 4 Clip</h2>
+        <p class="text">Confira uma prévia deste lançamento.</p>
     </li>
     <li class="hero__shows__list__item">
-        <img src="./dist/images/mais_populares/cavaleira_da_lua.jpg" alt="Cavaleira da lua">
+        <img src="./dist/images/extras/img2.webp" alt="Cavaleira da lua">
+        <h2 class="text--big">Anatomia de Uma Cena: Parquinho</h2>
+        <p class="text">Os cineastas e a equipe falam das principais cenas do filme e dos...</p>
     </li>
     <li class="hero__shows__list__item">
-        <img src="./dist/images/mais_populares/o_incrivel_dr_pol.jpg" alt="O incrivel dr pol">
+        <img src="./dist/images/extras/img3.webp" alt="O incrivel dr pol">
+        <h2 class="text--big">Anatomia de Uma Cena: Prólogo</h2>
+        <p class="text">Os cineastas e a equipe falam das principais cenas do filme e dos</p>
     </li>
     <li class="hero__shows__list__item">
-        <img src="./dist/images/mais_populares/red.jpg" alt="Red">
+        <img src="./dist/images/extras/img4.webp" alt="Red">
+        <h2 class="text--big">Comentários em Áudio</h2>
+        <p class="text">Com o diretor Josh Cooley e o produtor Mark Nielsen.</p>
     </li>
     <li class="hero__shows__list__item">
-        <img src="./dist/images/mais_populares/obi_wan.jpg" alt="Obi wan">
+        <img src="./dist/images/extras/img5.webp" alt="Obi wan">
+        <h2 class="text--big">Prêmios do Parque de Diversões</h2>
+        <p class="text">Uma montagem feita pela equipe de
+            Produção de Animação</p>
     </li>
     <li class="hero__shows__list__item">
-        <img src="./dist/images/mais_populares/tudo_igual_sqn.jpg" alt="Tudo igual SQN">
+        <img src="./dist/images/extras/img6.webp" alt="Tudo igual SQN">
+        <h2 class="text--big">Cena Inédita: Betty Encontra Hipopótarnos</h2>
+        <p class="text">Enquanto tenta recuperar seu chapéu roubado,
+            Woody encontra Betty em uma seção escondid...</p>
+    </li>
+    <li class="hero__shows__list__item">
+        <img src="./dist/images/extras/img7.webp" alt="Tudo igual SQN">
+        <h2 class="text--big">Cena Inédita: Brinquedos Desesperados</h2>
+        <p class="text">Enquanto atravessam o antiquário, Woody e Betty enfrentam outros...</p>
     </li>
 </ul>
-<ul data-tab-id="mais_starplus" class="hero__shows__list">
-    <li class="hero__shows__list__item">
-        <img src="./dist/images/mais_no_star_plus/belair.jpg" alt="Belair">
+<ul data-tab-id="detalhes" class="hero__shows__list">
+    <li class="hero__shows__list__sobre">
+        <h2 class="text--big space">Toy Story 4</h2>
+        <p class="text">Woody (voz de Tom Hanks) sempre soube qual era seu lugar no mundo, e que sua prioridade é cuidar
+            de suas crianças, seja Andy ou Bonnie. Então, quando o novo e adorado projeto artesanal de Bonnie
+            transformado em brinquedo, Garfinho (voz de Tony Hale), declara-se "lixo" e não brinquedo, Woody
+            assume a responsabilidade de mostrar ao Garfinho por que ele deveria abraçar a ideia de ser um
+            brinquedo. Quando Bonnie resolve levar toda a turma na sua viagem com a família, Woody acaba se
+            dispersando inesperadamente e se juntando à sua amiga Bo Peep (voz de Annie Potts), que há muito
+            tempo não via. Depois de passar anos sozinha, o espírito aventureiro de Bo e a vida na estrada acabam
+            por esconder seu delicado exterior de porcelana. À medida que Woody e Bo percebem que pertencem
+            a mundos diferentes quando se trata da vida como um brinquedo, logo descobrem que esse é o menor
+            dos seus problemas.</p>
     </li>
-    <li class="hero__shows__list__item">
-        <img src="./dist/images/mais_no_star_plus/libertadores.jpg" alt="Libertadores">
+    <li class="hero__shows__list__detalhes">
+        <h2 class="text--big space">Duração:</h2>
+        <p class="text space-text">1h 41min</p>
+        <h2 class="text--big space">Data de lançamento:</h2>
+        <p class="text space-text">2019</p>
+        <h2 class="text--big space">Gênero:</h2>
+        <p class="text space-text">Comédia, Animação, Ação e aventura</p>
+        <h2 class="text--big space">Classificação:</h2>
+        <div class="text space-text"><img src="./dist/images/imglivre.webp" alt="L"></div>
+        <h2 class="text--big space">Classificação:</h2>
+        <div><img src="./dist/images/imghd.webp" alt="HD">
+            <img src="./dist/images/imgcc.webp" alt="CC">
+            <img src="./dist/images/imgad.webp" alt="Audiodrescrição"></div>
+        
     </li>
-    <li class="hero__shows__list__item">
-        <img src="./dist/images/mais_no_star_plus/nba.jpg" alt="NBA">
+    <li class="hero__shows__list__elenco">
+        <h2 class="text--big space">Direção:</h2>
+        <p class="text space-text">Josh Cooley</p>
+        <h2 class="text--big space">Elenco:</h2>
+        <p class="text space-text">Tom Hanks<br>
+            Tim Allen<br>
+            Annie Potts<br>
+            Tony Hale<br>
+            Keegan-Michael Key<br>
+            Madeleine McGraw</p>
     </li>
-    <li class="hero__shows__list__item">
-        <img src="./dist/images/mais_no_star_plus/os_simpson.jpg" alt="Os Simpsons">
-    </li>
-    <li class="hero__shows__list__item">
-        <img src="./dist/images/mais_no_star_plus/premier_league.jpg" alt="Premier League">
-    </li>
-    <li class="hero__shows__list__item">
-        <img src="./dist/images/mais_no_star_plus/the_kardashians.jpg" alt="The Kardashians">
-    </li>
+    
 </ul>
 </div>
     </section>
+
+    
 
     <footer class="footer">
         <div class="footer__container">
