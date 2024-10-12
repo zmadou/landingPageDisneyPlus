@@ -29,7 +29,6 @@
         margin: 0;
         
         &__button {
-            margin: 0;
             max-height: 100%;
             font-weight: bold;
             margin-right: 40px;
@@ -69,8 +68,10 @@
 
     
     &__logo {
+        width: auto;
         max-width: 80px;
-        width: 100%;
+        padding-right: 10px;
+        height: auto;
         margin-right: 55px;
         
     }
@@ -199,16 +200,91 @@
 
 
 @media (max-width: 768px) {
-    header {
+
+
+    
+    .header {
+
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        width: 100%;
+        background-color: transparent;
+        transition: background-color .5s ease;
+        z-index: 5;
+
+
+        &--is-transparent {
+            background-color: variaveis.$corDeFundo;
+            transition: background-color .5s ease;
+        }
+    
+        &__container {
+            padding: 8px 36px;
+            display: flex;
+            background-color: transparent;
+            align-items: center;
+            
+        }
 
         &__menu {
-            &__button {
-                span {
 
-                    display: none;
+            max-height: 100%;
+            display: flex;
+            margin: 0;
+            &__button {
+                
+                margin: 0;
+                max-height: 100%;
+                font-weight: bold;
+                margin-right: 20px;
+                margin-top: 10px;
+                color: variaveis.$corTextoSecundario;
+                font-size: 14px;
+                border: none;
+                padding-bottom: 5px;
+                background: none;
+                text-transform: uppercase;
+                cursor: pointer;
+                border-bottom: 5px solid transparent;
+
+                svg {
+                    margin-bottom: 15px;
+                }
+                i, svg {
+                    align-items: center;
+                    margin-right: 12px;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -3px; 
+                        left: 0;
+                        width: 0; 
+                        height: 2px;
+                        background-color: variaveis.$corTextoSecundario;
+                        transition: width 0.3s ease-out; 
+                    }
+                }
+    
+                span {
+                    display: none; 
+        
                     
                 }
+
+                &:hover i, svg::after {
+                    width: 100%; 
+                }
             }
+        }
+
+        &__logo {
+            width: auto;
+            max-width: 80px;
+            padding-right: 10px;
+            height: auto;
+            
         }
     }
 }
