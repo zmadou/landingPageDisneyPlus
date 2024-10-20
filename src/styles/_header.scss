@@ -8,7 +8,11 @@
     background-color: transparent;
     transition: background-color .5s ease;
     z-index: 5;
+    max-width: 100vw;
+    flex-direction: row;
+    align-items: center;
 
+    
 
     &--is-transparent {
         background-color: variaveis.$corDeFundo;
@@ -18,16 +22,58 @@
     &__container {
         padding: 8px 36px;
         display: flex;
-        background-color: transparent;
         align-items: center;
-        
+        width: 100%;
+
+        &__toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 5;
+
+            @media (max-width: 768px) {
+                display: flex; 
+                align-items: center;
+                z-index: 6; 
+            }
+        }
     }
 
     &__menu {
-        max-height: 100%;
         display: flex;
-        margin: 0;
+        flex-direction: row;
+        align-items: center;
+
+
+        @media (max-width: 1024px) {
+            gap: 15px;
+            
         
+    }
+        
+        @media (min-width: 769px) {
+            display: flex; 
+            flex-direction: row;
+            position: static;
+        }
+
+        @media (max-width: 768px) {
+                display: none;
+                flex-direction: column;
+                background-color: #000;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                z-index: 10;
+            &--active {
+                display: flex; 
+            }
+        }
+
         &__button {
             max-height: 100%;
             font-weight: bold;
@@ -41,12 +87,62 @@
             cursor: pointer;
             border-bottom: 5px solid transparent;
 
+
+            @media (max-width:1024px) {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            
+
+            @media (max-width: 768px) {
+                padding: 10px;
+                text-align: left;
+                width: 100%;
+                border-bottom: 1px solid #444;
+                max-width: 80%;
+
+                
+            }
+
             i, svg {
                 margin-right: 10px;
             }
 
+            svg {
+                margin-top: 5px;
+
+                @media (max-width:1024px) {
+                    
+                    
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -3px; 
+                        left: 0;
+                        width: 0; 
+                        height: 2px;
+                        background-color: variaveis.$corTextoSecundario;
+                        transition: width 0.3s ease-out;
+                    }
+                }
+            }
+
             span {
                 position: relative; 
+                display: inline; 
+
+                @media (max-width: 1024px) {
+                        display: none;
+                    
+                }
+
+                @media (max-width: 768px) {
+                    display: inline;
+                
+            }
+                
+                
     
                 &::after {
                     content: "";
@@ -56,86 +152,79 @@
                     width: 0; 
                     height: 2px;
                     background-color: variaveis.$corTextoSecundario;
-                    transition: width 0.3s ease-out; 
+                    transition: width 0.3s ease-out;
+                }
+            }
+            @media (max-width:1024px) {
+                &:hover svg::after {
+                    width: 100%; 
                 }
             }
     
             &:hover span::after {
                 width: 100%; 
+                
             }
         }
     }
 
-    
     &__logo {
         width: auto;
         max-width: 80px;
-        padding-right: 10px;
         height: auto;
-        margin-right: 55px;
-        
+        margin-right: 15px;
+        padding-right: 10px;
     }
 
     &__perfil {
-        
         margin-left: auto;
         display: flex;
         width: 230px;
         justify-content: end;
-        
-        
-        
-        
-        
+        @media (max-width: 768px) {
+            width: 160px;
+        }
+
         &__config {
-            
-            
-    
             li {
                 position: relative;
-                
-    
+
                 a {
-                    width: 240px;
+                    width: 230px;
                     max-width: 100%;
                     height: 66px;
                     padding: 0 36px 0 0;
                     display: flex;
                     align-items: center; 
-                    justify-content: flex-end; /* Alinha horizontalmente à esquerda */
+                    justify-content: flex-end;
                     text-decoration: none;
                     color: variaveis.$corTextoSecundario;
                     background-color: transparent;
+
+                    @media (max-width: 768px) {
+                        padding: 0 20px 0 0;
+                        width: 160px;
+                    }
 
                     span {
                         margin-right: 20px;
                     }
 
-
                     &:hover {
-                        background-color: #131313; /* Mantém a cor de fundo */
-                    
-                        
-                        
+                        background-color: #131313;
                     }
-    
-
-
-
                 }
-    
+
                 ul {
-                    
                     position: absolute;
-                    top: 100%; /* Faz o dropdown aparecer logo abaixo do "Meu Perfil" */
+                    top: 100%;
                     left: 0;
                     background-color: #131313;
                     display: none;
                     padding: 0;
                     margin: 0;
                     list-style: none;
-                    
-    
+
                     li {
                         width: 100%;
                         a {
@@ -155,136 +244,24 @@
                                 width: 40px;
                                 height: 40px;
                             }
-    
+
                             &:hover {
                                 background-color: #131313;
-                                
-                                
-
                             }
                         }
                     }
                 }
 
-
-    
                 &:hover ul, &.over ul {
                     display: block;
-                    border-bottom: 1px solid #fff;
-
-                    
-                    
-                }
-                &:hover > a {
-                    background-color: #131313; 
-                    
-                    
-                }
-
-                &:hover a:first-child {
-                    border-left: 1px solid #fff;
-                    
-                    
                 }
             }
         }
-        
+
         img {
             width: 48px;
             height: 48px;
             border-radius: 100%;
-        }
-
-    }
-}
-
-
-@media (max-width: 768px) {
-
-
-    
-    .header {
-
-        display: flex;
-        justify-content: space-between;
-        position: fixed;
-        width: 100%;
-        background-color: transparent;
-        transition: background-color .5s ease;
-        z-index: 5;
-
-
-        &--is-transparent {
-            background-color: variaveis.$corDeFundo;
-            transition: background-color .5s ease;
-        }
-    
-        &__container {
-            padding: 8px 36px;
-            display: flex;
-            background-color: transparent;
-            align-items: center;
-            
-        }
-
-        &__menu {
-
-            max-height: 100%;
-            display: flex;
-            margin: 0;
-            &__button {
-                
-                margin: 0;
-                max-height: 100%;
-                font-weight: bold;
-                margin-right: 20px;
-                margin-top: 10px;
-                color: variaveis.$corTextoSecundario;
-                font-size: 14px;
-                border: none;
-                padding-bottom: 5px;
-                background: none;
-                text-transform: uppercase;
-                cursor: pointer;
-                border-bottom: 5px solid transparent;
-
-                svg {
-                    margin-bottom: 15px;
-                }
-                i, svg {
-                    align-items: center;
-                    margin-right: 12px;
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        bottom: -3px; 
-                        left: 0;
-                        width: 0; 
-                        height: 2px;
-                        background-color: variaveis.$corTextoSecundario;
-                        transition: width 0.3s ease-out; 
-                    }
-                }
-    
-                span {
-                    display: none; 
-        
-                    
-                }
-
-                &:hover i, svg::after {
-                    width: 100%; 
-                }
-            }
-        }
-
-        &__logo {
-            width: auto;
-            max-width: 80px;
-            padding-right: 10px;
-            height: auto;
-            
         }
     }
 }
